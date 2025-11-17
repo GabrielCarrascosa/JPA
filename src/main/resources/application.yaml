@@ -3,14 +3,14 @@ spring:
     name: apresentacao
 
   datasource:
-    url: jdbc:h2:mem:apresentacao-db
+    url: jdbc:h2:file:./data/apresentacao-db
     driver-class-name: org.h2.Driver
     username: sa
     password:
 
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     show-sql: true
     properties:
       hibernate.format_sql: true
@@ -20,8 +20,4 @@ spring:
   h2:
     console:
       enabled: true
-
-logging:
-  level:
-    org.hibernate.SQL: DEBUG
-    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+      path: /h2-console
